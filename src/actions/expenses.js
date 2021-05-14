@@ -1,21 +1,20 @@
 import uuid from 'uuid';
 import database from '../firebase/firebase';
-import expenses from '../reducers/expenses';
+
  export const addExpense=(expense)=>({
     type: 'ADD_EXPENSE',
     expense 
 
 });
 
-
-
 export const startAddExpense =(expenseData ={})=>{
     return (dispatch)=>{
         const {
             description='',
+            note ='' ,
             amount =0,
-            createdAt =0,
-            note =''  
+            createdAt =0
+            
             }=expenseData;
             const expense ={description , note , amount , createdAt};
          
@@ -60,9 +59,6 @@ export const startSetExpenses=()=>{
 
                 dispatch(setExpenses(expenses));
              });
-         })
-          
-        
-        
+         })      
      };
 };
