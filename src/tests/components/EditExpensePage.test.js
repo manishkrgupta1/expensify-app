@@ -2,7 +2,7 @@ import React from 'react';
 import {shallow } from 'enzyme';
 import {EditExpensePage} from '../../components/EditExpensePage';
 import {expenses} from '../fixtures(dummy).js/fixtures';
-import { removeExpense } from '../../actions/expenses';
+
 
 let onSubmit,onClick, history , wrapper;
 
@@ -12,7 +12,7 @@ beforeEach(()=>{
      onClick=jest.fn();
      wrapper=shallow(<EditExpensePage 
          editExpense ={onSubmit}
-         removeExpense={onClick}
+         startRemoveExpense={onClick}
          history={history}
          expense={expenses[2]}/>);
      
@@ -34,7 +34,7 @@ test('should handle  edit expense correctly',()=>{
 });
 
 
-test('should handle  remove expense correctly',()=>{
+test('should handle  start remove expense correctly',()=>{
         
     wrapper.find('button').simulate('click');
     expect(history.push).toHaveBeenLastCalledWith('/');
