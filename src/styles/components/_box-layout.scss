@@ -1,5 +1,5 @@
 .box-layout {
-  background: $dark-blue;
+  background: url("/images/wp7470567.jpg");
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -12,7 +12,7 @@
   border-radius: 6px;
   background: fade-out($color: white, $amount: 0.2);
   text-align: center;
-  width: 100 rem;
+  width: 30rem;
   padding: $l-size $m-size;
 }
 .box-layout__title {
